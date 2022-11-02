@@ -18,22 +18,28 @@ public class Main {
 
         double sum = 0;
         for (int i = 0; i < employees.length; i++) {
-            sum += employees[i].getSalary();
+            if (employees[i] != null){
+                sum += employees[i].getSalary();
+            }
         }
         System.out.println("Сумма затрат на зарплаты в месяц " + sum + " рублей");
 
         double minSalary = employees[0].getSalary();
         for (int i = 0; i < employees.length; i++) {
-            if (employees[i].getSalary() < minSalary) {
-                minSalary = employees[i].getSalary();
+            if (employees[i] != null){
+                if (employees[i].getSalary() < minSalary) {
+                    minSalary = employees[i].getSalary();
+                }
             }
         }
         System.out.println("Минимальная зарплата сотрудника " + minSalary + " рублей");
 
         double maxSalary = employees[0].getSalary();
         for (int i = 0; i < employees.length; i++) {
-            if (employees[i].getSalary() > maxSalary) {
-                maxSalary = employees[i].getSalary();
+            if (employees[i] != null){
+                if (employees[i].getSalary() > maxSalary) {
+                    maxSalary = employees[i].getSalary();
+                }
             }
         }
         System.out.println("Максимальная зарплата сотрудника " + maxSalary + " рублей");
